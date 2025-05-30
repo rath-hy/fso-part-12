@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
   })
   res.send(todo);
   
-  const currentTodoCount = await getAsync('added_todos') || 0;
+  const currentTodoCount = parseInt(await getAsync('added_todos')) || 0;
   setAsync('added_todos', currentTodoCount + 1);
 });
 
